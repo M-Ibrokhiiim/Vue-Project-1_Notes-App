@@ -49,7 +49,7 @@ function deleteBtn(index){
     <div class="cart" v-for="(note,index) in notes" :key="index" :style="{backgroundColor:note.backgroundColor}">
       <button class="delete-btn" @click="deleteBtn(index)">X</button>
       <p class="noteText">{{ note.text }}</p>
-      <p class="date">{{ note.date.toLocaleDateString("en-US",{day:'numeric',month:'long',year:'numeric'}) }}</p>
+      <p class="date">{{ note.date.toLocaleDateString("en-US",{year:'numeric',day:'numeric',month:'long'}) }}</p>
     </div> 
   </section>
 </main>
@@ -158,10 +158,12 @@ textarea{
   word-wrap: break-word;
   overflow-wrap: break-word;
   font-family: cursive;
+  margin-top: -100px;
 }
 .delete-btn{
    width: 30px;
    height: 30px;
+   margin-bottom: 0;
    border-radius: 100px;
    background-color: aqua;
    color: black;
