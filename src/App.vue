@@ -27,11 +27,13 @@ function notesCollector(){
 
 }
 function deleteBtn(index){
-  const findElement=notes.value.findIndex((note)=>{
-    return note.id===id
-  })
+  // const findElement=notes.value.findIndex((note)=>{
+  //   return note.id===id
+  // })
   
-  return notes.value.splice(findElement,1)
+  // return notes.value.splice(findElement,1)
+
+  return notes.value.splice(index,1)
 }
 
 </script>
