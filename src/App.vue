@@ -49,7 +49,7 @@ function deleteBtn(index){
     <div class="cart" v-for="(note,index) in notes" :key="index" :style="{backgroundColor:note.backgroundColor}">
       <button class="delete-btn" @click="deleteBtn(index)">X</button>
       <p class="noteText">{{ note.text }}</p>
-      <p class="date">{{ note.date.toLocaleDateString("en-US") }}</p>
+      <p class="date">{{ note.date.toLocaleDateString("en-US",{day:'numeric',month:'long',year:'numeric'}) }}</p>
     </div> 
   </section>
 </main>
