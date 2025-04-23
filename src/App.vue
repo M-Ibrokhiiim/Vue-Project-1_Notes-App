@@ -27,12 +27,6 @@ function notesCollector(){
 
 }
 function deleteBtn(index){
-  // const findElement=notes.value.findIndex((note)=>{
-  //   return note.id===id
-  // })
-  
-  // return notes.value.splice(findElement,1)
-
   return notes.value.splice(index,1)
 }
 
@@ -166,7 +160,16 @@ textarea{
   font-family: cursive;
 }
 .delete-btn{
-
+   width: 30px;
+   height: 30px;
+   border-radius: 100px;
+   background-color: aqua;
+   color: black;
+   font-family: cursive;
+   align-items: center;
+   display: flex;
+   justify-content: center;
+   margin-left: 165px;
 }
 </style>
 
