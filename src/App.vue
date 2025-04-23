@@ -17,6 +17,7 @@ function notesCollector(){
   }
   
   notes.value.push({
+    id:Math.floor(Math.random()*10),
     text:note.value,
     date:new Date(),
     backgroundColor:randomColor()
@@ -24,6 +25,13 @@ function notesCollector(){
   note.value=''
   showContainer.value=false
 
+}
+function deleteBtn(index){
+  // const findElement=notes.value.findIndex((note)=>{
+  //   return note.id===id
+  // })
+  
+  // return notes.value.splice(findElement,1)
 }
 
 </script>
@@ -42,7 +50,8 @@ function notesCollector(){
   </header>
 
   <section class="cart-container">
-    <div class="cart" v-for="note in notes" :key="note" :style="{backgroundColor:note.backgroundColor}">
+    <div class="cart" v-for="(note,index) in notes" :key="index" :style="{backgroundColor:note.backgroundColor}">
+      <button class="delete-btn" @click="deleteBtn(index)">X</button>
       <p class="noteText">{{ note.text }}</p>
       <p class="date">{{ note.date.toLocaleDateString("en-US") }}</p>
     </div> 
@@ -153,6 +162,9 @@ textarea{
   word-wrap: break-word;
   overflow-wrap: break-word;
   font-family: cursive;
+}
+.delete-btn{
+
 }
 </style>
 
